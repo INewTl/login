@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+:root {
+    --cor--secundaria: white;
+    --cor--button: ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+body {
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    
+    background: url('../assets/backImg.png') no-repeat;
+    /* background: linear-gradient(#000000, #000000, #14014e); */
+    background-size: cover;
+    background-position: center;    
+}
+
+.container__conteudo {
+    position: relative;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.56);
+    border-radius: 20px;
+    backdrop-filter: blur(40px);    
+
+    overflow: hidden;
+}
+
+.container .container__conteudo.singup,
+.container.loginContainer .container__conteudo.login {
+    display: none;
+}
+
+.container.loginContainer .container__conteudo.singup {
+    display: flex;
+}
+
+.titulo {
+    font-size: 2rem;
+    text-align: center;
+    color: var(--cor--secundaria);
+}
+
+.caixa__entrada {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid var(--cor--secundaria);
+}
+
+.caixa__entrada .texto {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: var(--cor--secundaria);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.campo:focus ~ .texto,
+.campo:valid ~ .texto {
+    top: -5px;
+}
+
+.caixa__entrada .campo {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0 35px 0 5px;
+    color: var(--cor--secundaria);
+}
+
+.caixa__entrada ion-icon {
+    position: absolute;
+    right: 8px;
+    color: var(--cor--secundaria);
+    font-size: 1.2rem;
+    top: 20px;
+}
+
+.lembrar__senha {
+    margin: -10px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    color: var(--cor--secundaria);
+}
+
+.lembrar__senha input {
+    margin-right: 10px;
+}
+
+.lembrar__senha label:hover {
+    text-decoration: underline;
+}
+
+.lembrar__senha a {
+    text-decoration: none;
+    color: var(--cor--secundaria);
+}
+
+.lembrar__senha a:hover {
+    text-decoration: underline;
+}
+
+.button-login {
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: var(--cor--secundaria);
+}
+
+.registrar {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--cor--secundaria);
+    margin: 25px 0 10px 0;
+}
+
+.registrar p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--cor--secundaria);
+}
+
+.registrar p a:hover {
+    text-decoration: underline;
+}
+
+.logar-conta {
+    font-size: 0.9rem;
+    text-align: center;
+    color: var(--cor--secundaria);
+    margin: 25px 0 10px 0;
+}
+
+.logar-conta p a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--cor--secundaria);
+}
+
+.logar-conta p a:hover {
+    text-decoration: underline;
+}
+
+.estrela {
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 1px;
+    background: white;
+    border-radius: 50%;
+    animation: cintilante 2s infinite;
+}
+
+.estrela-maior {
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    animation: cintilante 3s infinite;
+}
+
+@media (max-width: 700px) {
+    .container__conteudo {
+        padding: 40px;
+    }
+
+    .titulo {
+        font-size: 1.6rem;
+    }
+
+    .caixa__entrada {
+        width: 280px;
+    }
+}
+
+@media (max-width: 400px) {
+    .container__conteudo {
+        padding: 30px;
+    }
+
+    .titulo {
+        font-size: 1.2rem;
+    }
+
+    .caixa__entrada {
+        width: 250px;
+    }
+}
+
+@keyframes cintilante {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
